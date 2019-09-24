@@ -28,7 +28,6 @@ export default mixins(Colorable, Themeable).extend({
         attrs: {
           name: 'message-transition',
           tag: 'div',
-          role: 'alert',
         },
       }, this.value.map(this.genMessage))
     },

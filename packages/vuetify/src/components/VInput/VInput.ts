@@ -221,6 +221,8 @@ export default baseMixins.extend<options>().extend({
         ? [this.hint]
         : this.validations
 
+      const role = (this.hasMessages) ? 'alert' : null
+
       return this.$createElement(VMessages, {
         props: {
           color: this.hasHint ? '' : this.validationState,
@@ -228,6 +230,7 @@ export default baseMixins.extend<options>().extend({
           light: this.light,
           value: (this.hasMessages || this.hasHint) ? messages : [],
         },
+        attrs: { role },
       })
     },
     genSlot (
